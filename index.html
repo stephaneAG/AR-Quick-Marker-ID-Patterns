@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AR Quick Marker ID Patterns - images no longer needed ! ;p </title>
+<style id="jsbin-css">
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.screenIdMarker {
+  display: block;
+}
+</style>
+</head>
+<body>
+  <canvas width="300" height="300" cross-origin=""></canvas>
+
+<!-- import freshly written mini-lib for Marker Id Pattern generation on canvas without needing images ;p -->
+<script src="quickMarkerIdPattern.js"></script>
+<script id="jsbin-javascript">
+
+var cnvs = document.querySelector('canvas');
+var ctx = cnvs.getContext('2d');
+
+var generateMarkerId = function(){
+  // use our freshly written helper lib ;)
+  quickMarkerIdPattern(ctx, 99);
+}
+
+//window.onload = process;
+window.onload = generateMarkerId;
+
+</script>
+</body>
+</html>
